@@ -6,6 +6,17 @@ import java.util.Arrays;
 
 
 class BubbleSort {
+	// swapping method
+	public static void swap(int a, int b)  
+{  
+//swapping logic      
+int temp = arr[j];
+arr[j] = arr[j + 1];
+arr[j + 1] = temp; 
+		
+}  
+	
+	
 	void bubbleSort(int arr[]) 
 	{
 		int n = arr.length;
@@ -14,14 +25,12 @@ class BubbleSort {
 		for (int i = 0; i < n - 1; i++)
 			for (int j = 0; j < n - i - 1; j++)
 				if (arr[j] > arr[j + 1]) {
-					// swap arr[j+1] and arr[j]
-					int temp = arr[j];
-					arr[j] = arr[j + 1];
-					arr[j + 1] = temp; 
+					
+					 swap(arr[j+1],arr[j]);
 				}
 	}
 
-	
+	// printing of sorted array
 	void printArray(int arr[])
 	{
 		int n = arr.length;
@@ -30,17 +39,23 @@ class BubbleSort {
 		System.out.println();
 	}
 
-	// Driver method to test above
+	// Driver Method
 	public static void main(String args[])
 	{
 		BubbleSort ob = new BubbleSort();
 		int arr[] = { 64, 34, 25, 12, 22, 11, 90 }; 
+		
 		//printing input array
+		
 		System.out.println("Input array");
 		ob.printArray(arr);
+		
 		//calling bubble sort
+		
 		ob.bubbleSort(arr);
+		
 		//printing sorted array
+		\
 		System.out.println("Sorted array");
 		ob.printArray(arr);
 	}
